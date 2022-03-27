@@ -11,7 +11,8 @@ const darkTheme = createTheme({
     colors: {
       primary: '#FF0095',
       primaryLight: '#582A87',
-      secondary: '#2D2D2D'
+      secondary: '#2D2D2D',
+      secondaryDark: '#8c8c8c'
     }
   }
 })

@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -27,93 +27,94 @@ a {
 
 code[class*="language-"],
 pre[class*="language-"] {
-	font-family: "Fira Mono", Menlo, Monaco, "Lucida Console", "Courier New", Courier, monospace;
-	font-size: 16px;
-	line-height: 1.375;
-	direction: ltr;
-	text-align: left;
-	word-spacing: normal;
+  font-family: "Fira Mono", Menlo, Monaco, "Lucida Console", "Courier New",
+    Courier, monospace;
+  font-size: 16px;
+  line-height: 1.375;
+  direction: ltr;
+  text-align: left;
+  word-spacing: normal;
 
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
 
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-	white-space: pre;
-	white-space: pre-wrap;
-	word-break: break-all;
-	word-wrap: break-word;
-	background: #2D2D2D;
-	color: #ffffff;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  background: #2d2d2d;
+  color: #ffffff;
 }
 
 pre > code[class*="language-"] {
-	font-size: 1em;
+  font-size: 1em;
 }
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
+  padding: 0.1em;
+  border-radius: 0.3em;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #797379;
+  color: #797379;
 }
 
 .token.punctuation {
-	color: #b9b5b8;
+  color: #b9b5b8;
 }
 
 .namespace {
-	opacity: .7;
+  opacity: 0.7;
 }
 
 .token.null,
 .token.operator,
 .token.boolean,
 .token.number {
-	color: #fd8b19;
+  color: #fd8b19;
 }
 
 .token.property {
-	color: #fdcc59;
+  color: #fdcc59;
 }
 
 .token.tag {
-	color: #1290bf;
+  color: #1290bf;
 }
 
 .token.string {
-	color: #149b93;
+  color: #149b93;
 }
 
 .token.selector {
-	color: #c85e7c;
+  color: #c85e7c;
 }
 
 .token.attr-name {
-	color: #fd8b19;
+  color: #fd8b19;
 }
 
 .token.entity,
 .token.url,
 .language-css .token.string,
 .style .token.string {
-	color: #149b93;
+  color: #149b93;
 }
 
 .token.attr-value,
@@ -121,30 +122,95 @@ pre[class*="language-"] {
 .token.control,
 .token.directive,
 .token.unit {
-	color: #8fc13e;
+  color: #8fc13e;
 }
 
 .token.statement,
 .token.regex,
 .token.atrule {
-	color: #149b93;
+  color: #149b93;
 }
 
 .token.placeholder,
 .token.variable {
-	color: #1290bf;
+  color: #1290bf;
 }
 
 .token.important {
-	color: #dd464c;
-	font-weight: bold;
+  color: #dd464c;
+  font-weight: bold;
 }
 
 .token.entity {
-	cursor: help;
+  cursor: help;
 }
 
 pre > code.highlight {
-	outline: .4em solid red;
-	outline-offset: .4em;
+  outline: 0.4em solid red;
+  outline-offset: 0.4em;
+}
+
+/* Font  */
+/* inter-100 - latin */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100;
+  src: url("/fonts/Inter/Inter-Thin.ttf") format("truetype");
+}
+/* inter-200 - latin */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  src: url("/fonts/Inter/Inter-ExtraLight.ttf") format("truetype");
+}
+/* inter-300 - latin */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/fonts/Inter/Inter-Light.ttf") format("truetype");
+}
+/* inter-regular - latin */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Inter/Inter-Regular.ttf") format("truetype");
+}
+/* inter-500 - latin */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/Inter/Inter-Medium.ttf") format("truetype");
+}
+/* inter-600 - latin */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/fonts/Inter/Inter-SemiBold.ttf") format("truetype");
+}
+/* inter-700 - latin */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/Inter/Inter-Bold.ttf") format("truetype");
+}
+/* inter-800 - latin */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  src: url("/fonts/Inter/Inter-ExtraBold.ttf") format("truetype");
+}
+/* inter-900 - latin */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/fonts/Inter/Inter-Black.ttf") format("truetype");
 }

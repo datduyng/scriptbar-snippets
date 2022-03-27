@@ -1,15 +1,17 @@
 import type { GetStaticProps, NextPage } from 'next'
 import { Button, Container, Grid, Text, Input, Code, Spacer, Card } from '@nextui-org/react';
 import SendButton from '../components/stateless/send-button';
-import { getSnippetContents } from '../libs/get-snippets';
-import type { SnippetContent } from '../libs/get-snippets';
+import { getSnippetContents } from '../libs/get-snippets.server';
+import type { SnippetContent } from '../libs/get-snippets.server';
 import SnippetContentGroup from '../components/snippet-content-group';
 import DefaultLayout from '../layouts/default';
 import Header from '../layouts/header';
 
 const Home: NextPage<IndexServerProps> = ({ snippets }) => {
   return (
+
     <DefaultLayout>
+      <Spacer y={3} />
       <Header />
       <Spacer y={3} />
 
@@ -36,7 +38,7 @@ const Home: NextPage<IndexServerProps> = ({ snippets }) => {
 
       <Spacer y={2} />
 
-      <Grid xs={12} alignContent='center' justify='center' direction='column' css={{
+      {/* <Grid xs={12} alignContent='center' justify='center' direction='column' css={{
         padding: '$2',
       }}>
         <Input
@@ -46,7 +48,7 @@ const Home: NextPage<IndexServerProps> = ({ snippets }) => {
           contentRight={<SendButton />}
           width={'100%'}
         />
-      </Grid>
+      </Grid> */}
 
       <Spacer y={0.5} />
       <SnippetContentGroup snippets={snippets} />

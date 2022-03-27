@@ -7,13 +7,16 @@ export default function Header() {
     }}>
       <Text span css={{
         fontSize: '$lg',
-      }}>
+        fontFamily: '$sans'
+      }}
+      >
         Scriptbar Snippets 🚀
       </Text>
     </Grid>
     <Grid css={{ alignSelf: 'center' }}>
       <Text span css={{
         fontSize: '$xs',
+        fontFamily: '$sans'
       }}>
         Handy and easy to understand snippets to keep in your browser
       </Text>

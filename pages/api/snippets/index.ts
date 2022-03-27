@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { getSnippetContents } from '../../../libs/get-snippets';
+import { getSnippetContents } from '../../../libs/get-snippets.server';
 
 type Data = any
 
