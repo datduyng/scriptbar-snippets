@@ -4,28 +4,33 @@ import {
   defineNestedType,
 } from "contentlayer/source-files";
 
-const Tag = defineNestedType(() => ({
-  name: "Tag",
-  fields: {
-    value: {
-      type: "enum",
-      options: ["Basic", "Intermidiate", "Advanced"],
-    },
-  },
-}));
+// const Tag = defineNestedType(() => ({
+//   name: "Tag",
+//   fields: {
+//     value: {
+//       type: "enum",
+//       options: ["Basic", "intermediate", "Advanced"],
+//     },
+//   },
+// }));
 
 export const Snippet = defineDocumentType(() => ({
   name: "Snippet",
-  filePathPattern: `**/*.mdx`,
+  filePathPattern: `**/*.md`,
+  contentType: 'markdown',
   fields: {
-    shortDescription: {
+    summary: {
       type: "string",
       required: true,
     },
     tags: {
       type: "list",
-      required: false,
-      of: Tag,
+      required: true,
+      of: {
+        type: 'enum',
+        options: ["Basic", "intermediate", "Advanced"],
+      },
+      default: [],
     },
   },
 }));
@@ -40,6 +45,8 @@ export const SnippetSource = defineDocumentType(() => ({
 const contentLayerConfig = makeSource({
   contentDirPath: "stores",
   documentTypes: [Snippet, SnippetSource],
+  mdx: {
+  }
 });
 
 export default contentLayerConfig;

@@ -19,7 +19,9 @@ export const SnippetContentDetail = ({ snippet }: { snippet?: SnippetContent }) 
     <Text b size={"$md"}>
       {snippet.id}.js
     </Text>
-    <div dangerouslySetInnerHTML={{
+    <Text color="$secondaryDark">{<Text color="$secondaryDark">{snippet.tags?.map(tag => `#${tag}`).join(', ')}</Text>}</Text>
+    <Text>{snippet.summary}</Text>
+    <div className='snippet-raw-html' dangerouslySetInnerHTML={{
       __html: snippet.readmeBody.html
     }} />
     <CodeBlock language='js' value={snippet.content} />
@@ -34,17 +36,14 @@ const SnippetContent = ({ snippet }: { snippet: SnippetContent }) => {
           <Text b size={"$md"}>
             {snippet.id}.js
           </Text>
-
+          <Text color="$secondaryDark" css={{ marginLeft: '$4' }}>
+            {snippet.tags?.map(tag => `#${tag}`).join(', ')}
+          </Text>
         </StyledLink>
       </Link>
-      <Text color="$secondaryDark" size="$xs">
-        Run in browser, basic
-      </Text>
 
 
-      <div dangerouslySetInnerHTML={{
-        __html: snippet.readmeBody.html
-      }} />
+      <Text>{snippet.summary}</Text>
     </Card>
   </Grid>
 }

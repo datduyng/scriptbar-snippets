@@ -15,7 +15,7 @@ import {toHtml} from 'hast-util-to-html'
 import { styled } from '@nextui-org/react';
 
 refractor.register(js);
-// refractor.register(jsx);
+refractor.register(jsx);
 // refractor.register(bash);
 // refractor.register(css);
 // refractor.register(diff);
@@ -48,7 +48,7 @@ const WindowIcon = styled('div', {
 });
 
 type CodeBlockProps = {
-  language: 'js' | 'jsx' | 'bash' | 'css' | 'diff';
+  language: 'js' | 'jsx' | 'any';
   value?: string;
   line?: string;
   css?: any;
@@ -208,6 +208,6 @@ const CodeBlock = React.forwardRef<HTMLPreElement, CodeBlockProps>(
   }
 );
 
-CodeBlock.displayName = 'NextUI - CodeBlock';
+CodeBlock.displayName = 'CodeBlock';
 
 export default CodeBlock;
