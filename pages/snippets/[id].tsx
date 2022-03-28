@@ -6,8 +6,8 @@ import DefaultLayout from '../../layouts/default';
 import Header from '../../layouts/header';
 import type { SnippetContent } from '../../libs/get-snippets.server';
 import { getSnippetContents } from '../../libs/get-snippets.server';
-import Image from 'next/image';
 import GithubIcon from '../../components/stateless/github-icon';
+import * as gtag from '../../libs/gtag.client';
 
 const SnippetById: NextPage<SnippetByIdServerProps> = ({ snippet }) => {
   return <>
@@ -17,7 +17,6 @@ const SnippetById: NextPage<SnippetByIdServerProps> = ({ snippet }) => {
       paddingRight: '$12',
     }}>
       <Grid>
-        {/*  */}
         <Link href="/" passHref>
           <StyledLink animated="true">
             <Text b color="$secondaryDark" size={"$sm"}>Home</Text>
@@ -25,7 +24,12 @@ const SnippetById: NextPage<SnippetByIdServerProps> = ({ snippet }) => {
         </Link>
       </Grid>
       <Grid>
-        <StyledLink animated="true" href="https://github.com/datduyng/scriptbar-snippets" target="_blank">
+        <StyledLink animated="true" href="https://github.com/datduyng/scriptbar-snippets" target="_blank" onClick={() => {
+          gtag.event({
+            action: 'click github icon [id] page',
+            category: 'github icon',
+          })
+        }}>
           <GithubIcon color={"#8c8c8c"} />
         </StyledLink>
 

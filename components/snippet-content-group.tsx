@@ -5,6 +5,7 @@ import CodeBlock from './stateless/codeblock';
 import { getSnippetContents } from '../libs/get-snippets.server';
 import type { SnippetContent } from '../libs/get-snippets.server';
 import styles from './snippet-content-group.module.css';
+import * as gtag from '../libs/gtag.client';
 
 export default function SnippetContentGroup({ snippets }: { snippets: SnippetContent[] }) {
   return <Grid.Container gap={1} direction="column">
@@ -25,7 +26,13 @@ export const SnippetContentDetail = ({ snippet }: { snippet?: SnippetContent }) 
     <div className={styles['snippet-raw-html']} dangerouslySetInnerHTML={{
       __html: snippet.readmeBody.html
     }} />
-    <CodeBlock language='js' value={snippet.content} showWindowIcons={true}/>
+    <CodeBlock language='js' value={snippet.content} showWindowIcons={true} onCopy={() => {
+      gtag.event({
+        action: 'click copy codeblock',
+        label: snippet.id,
+        category: 'copy-code-block',
+      })
+    }} />
   </Grid>
 }
 
@@ -33,7 +40,13 @@ const SnippetContent = ({ snippet }: { snippet: SnippetContent }) => {
   return <Grid>
     <Card>
       <Link href={`/snippets/${snippet.id}`} passHref>
-        <StyledLink >
+        <StyledLink onClick={() => {
+          gtag.event({
+            action: 'click card snippet',
+            label: snippet.id,
+            category: 'click-card-snippet',
+          })
+        }} >
           <Text b size={"$md"}>
             {snippet.id}.js
           </Text>
@@ -42,8 +55,6 @@ const SnippetContent = ({ snippet }: { snippet: SnippetContent }) => {
           </Text>
         </StyledLink>
       </Link>
-
-
       <Text>{snippet.summary}</Text>
     </Card>
   </Grid>

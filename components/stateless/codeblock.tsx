@@ -49,6 +49,7 @@ type CodeBlockProps = {
   showLineNumbers?: boolean;
   showWindowIcons?: boolean;
   className?: string;
+  onCopy?: () => void;
 };
 
 /**
@@ -141,6 +142,7 @@ const CodeBlock: React.FC<CodeBlockProps> = (_props) => {
     css,
     showLineNumbers,
     showWindowIcons,
+    onCopy,
     ...props
   } = _props;
   const [copied, setCopied] = useState(false);
@@ -174,6 +176,7 @@ const CodeBlock: React.FC<CodeBlockProps> = (_props) => {
         setTimeout(() => {
           setCopied(false);
         }, 2000)
+        onCopy && onCopy();
       },
       (error) => (setCopied(false))
     );
