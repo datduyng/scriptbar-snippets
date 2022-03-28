@@ -8,6 +8,9 @@ Snippets/ScractchPad is a feature most chromium browser and Firefox provide that
 - [Nextui](https://nextui.org/)
 - [contentlayer](https://github.com/contentlayerdev/contentlayer)
 
+## Note
+This page has Google Analytic enabled. Data are 100% anonymous since users don't need to be authenticated to use the site. This data is mainly used to improve the site
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
