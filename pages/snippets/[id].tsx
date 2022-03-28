@@ -25,7 +25,7 @@ const SnippetById: NextPage<SnippetByIdServerProps> = ({ snippet }) => {
         </Link>
       </Grid>
       <Grid>
-        <StyledLink animated="true" href="https://github.com/datduyng" target="_blank">
+        <StyledLink animated="true" href="https://github.com/datduyng/scriptbar-snippets" target="_blank">
           <GithubIcon color={"#8c8c8c"} />
         </StyledLink>
 

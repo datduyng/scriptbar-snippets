@@ -30,8 +30,12 @@ const Home: NextPage<IndexServerProps> = ({ snippets }) => {
             Thinking to contribute?
           </Text>
           <Grid xs={12} direction='column'>
-            <Button color="secondary">Github</Button>
-            <Button color="primary" css={{ marginTop: "$4" }}>Add a snippet</Button>
+            <Button color="secondary" onClick={() => {
+              window.open('https://github.com/datduyng/scriptbar-snippets', '_blank');
+            }}>Github</Button>
+            <Button color="primary" css={{ marginTop: "$4" }} onClick={() => {
+              window.open('https://github.com/datduyng/scriptbar-snippets/tree/main/stores', '_blank');
+            }}>Add a snippet</Button>
           </Grid>
         </Grid>
       </Grid.Container>
