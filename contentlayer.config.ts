@@ -1,18 +1,7 @@
 import {
   defineDocumentType,
   makeSource,
-  defineNestedType,
 } from "contentlayer/source-files";
-
-// const Tag = defineNestedType(() => ({
-//   name: "Tag",
-//   fields: {
-//     value: {
-//       type: "enum",
-//       options: ["Basic", "intermediate", "Advanced"],
-//     },
-//   },
-// }));
 
 export const Snippet = defineDocumentType(() => ({
   name: "Snippet",
@@ -38,7 +27,6 @@ export const Snippet = defineDocumentType(() => ({
 export const SnippetSource = defineDocumentType(() => ({
   name: "SnippetSource",
   filePathPattern: `**/*.js`,
-  // contentType: "data",
   fields: {},
 }));
 

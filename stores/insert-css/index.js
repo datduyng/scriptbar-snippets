@@ -1,5 +1,9 @@
-(() => {
-  function insertCss(code, id) {
+/*
+ * Expose method insertCss allow to insert css code into the DOM
+ * Example: insertCss(`html{filter: invert(1)}`)
+ */
+((root, document) => {
+  function insertCss(code) {
     if (!code) {
       return console.error('insertCss: No code');
     }
@@ -12,16 +16,5 @@
     }
     document.getElementsByTagName("head")[0].appendChild( style );
   }
-  
-  // Feel free to extend this snippet with your favorite CSS snippets.
-  // Here's an example which makes the current page high contrast.
-  // Notice the trailing backslashes, used to define multiline strings.
-  function insertCssHighContrast() {
-    var css = '\
-      * { background: white ! important; color: black !important } \
-      :link, :link * { color: #0000EE !important } \
-      :visited, :visited * { color: #551A8B !important } \
-    ';
-    insertCss(css);
-  }
-})()
+  root.insertCss = insertCss;
+})(this, document)
