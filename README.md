@@ -1,3 +1,9 @@
+## Why was this created? 
+Snippets/ScractchPad is a feature most chromium browser and Firefox provide that allow you and other to save handy snippet right in Chrome. Your snippet can also be run in debug mode. This website provides list of handy and easy to understand snippets to help you learn and inspire you to take advantage of in your next project
+
+
+
+
 ## Technologies 
 - [Next.js](https://nextjs.org/)
 - [Nextui](https://nextui.org/)
