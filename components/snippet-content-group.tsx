@@ -1,9 +1,10 @@
-import { Card, Grid, Link as StyledLink, Text } from '@nextui-org/react';
+import { Card, Grid, Link as StyledLink, Text, Snippet } from '@nextui-org/react';
 import Link from 'next/link';
 import React from 'react';
 import CodeBlock from './stateless/codeblock';
 import { getSnippetContents } from '../libs/get-snippets.server';
 import type { SnippetContent } from '../libs/get-snippets.server';
+import styles from './snippet-content-group.module.css';
 
 export default function SnippetContentGroup({ snippets }: { snippets: SnippetContent[] }) {
   return <Grid.Container gap={1} direction="column">
@@ -21,10 +22,10 @@ export const SnippetContentDetail = ({ snippet }: { snippet?: SnippetContent }) 
     </Text>
     <Text color="$secondaryDark">{<Text color="$secondaryDark">{snippet.tags?.map(tag => `#${tag}`).join(', ')}</Text>}</Text>
     <Text>{snippet.summary}</Text>
-    <div className='snippet-raw-html' dangerouslySetInnerHTML={{
+    <div className={styles['snippet-raw-html']} dangerouslySetInnerHTML={{
       __html: snippet.readmeBody.html
     }} />
-    <CodeBlock language='js' value={snippet.content} />
+    <CodeBlock language='js' value={snippet.content} showWindowIcons={true}/>
   </Grid>
 }
 

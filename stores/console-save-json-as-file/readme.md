@@ -10,3 +10,5 @@ A simple way to save objects as .json files from the console, includes a chrome 
 
 Data can be a string or just an object, objects are passed through json.stringify() before writing to file. Filename is optional, defaults to 'console.json'.
 
+![Console save json as file demo](/stores-assets/console-save-json-as-file/demo.gif)
+

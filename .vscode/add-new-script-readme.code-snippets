@@ -1,0 +1,23 @@
+{
+	// Place your scriptbar-snippets workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"new scriptbar snippet readme.md": {
+		"scope": "markdown,md",
+		"prefix": ["---", "new snippet"],
+		"body": [
+			"---",
+			"summary: $1",
+      "tags: [${2:tag1, tag2}]",
+      "---",
+      "",
+      "",
+      "![${3:demo image}](${4:image.png})",
+		],
+		"description": "Log output to console"
+	}
+}
