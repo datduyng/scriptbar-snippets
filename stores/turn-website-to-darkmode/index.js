@@ -6,6 +6,6 @@
   }
 
   insertCss(`html {
-    filter: invert(1);
+    filter: invert(1) hue-rotate(180deg);
   }`);
 })(document);
