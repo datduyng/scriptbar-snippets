@@ -59,9 +59,13 @@ export const getStaticProps: GetStaticProps<SnippetByIdServerProps> = async ({ p
 }
 
 export function getStaticPaths() {
+  const snippets = getSnippetContents(); 
+  const snippetIdRoutes = snippets
+    .map(snipt => snipt.id)
+    .map(id => `/snippets/${id}`);
+  console.info("Prerendering snippet routes", snippetIdRoutes);
   return {
-    paths: [
-    ],
+    paths: snippetIdRoutes,
     fallback: true // false or 'blocking'
   };
 }
