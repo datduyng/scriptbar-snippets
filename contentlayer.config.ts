@@ -17,7 +17,7 @@ export const Snippet = defineDocumentType(() => ({
       required: true,
       of: {
         type: 'enum',
-        options: ["Basic", "intermediate", "Advanced"],
+        options: ["Basic", "intermediate", "Advanced", "Debug"],
       },
       default: [],
     },
