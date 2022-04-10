@@ -7,6 +7,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           {CssBaseline.flush()}
+          <link rel="shortcut icon" href="/favicon.ico" />
         </Head>
         <body>
           <Main />
