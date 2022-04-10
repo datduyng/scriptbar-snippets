@@ -51,18 +51,6 @@ const Home: NextPage<IndexServerProps> = ({ snippets }) => {
 
       <Spacer y={2} />
 
-      {/* <Grid xs={12} alignContent='center' justify='center' direction='column' css={{
-        padding: '$2',
-      }}>
-        <Input
-          clearable
-          contentRightStyling={false}
-          placeholder="Type to search for snippets..."
-          contentRight={<SendButton />}
-          width={'100%'}
-        />
-      </Grid> */}
-
       <Spacer y={0.5} />
       <SnippetContentGroup snippets={snippets} />
     </DefaultLayout>
@@ -81,17 +69,5 @@ export const getStaticProps: GetStaticProps<IndexServerProps> = async () => {
     }
   }
 }
-
-const JSCode = `const App = props => {
-  return (
-    <div>
-      <h1> Prism JS </h1>
-      <div>Awesome Syntax Highlighter</div>
-    </div>
-  );
-};
-`;
-
-
 
 export default Home

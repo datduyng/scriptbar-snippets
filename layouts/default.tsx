@@ -1,5 +1,5 @@
 import React from "react"
-import { Container } from "@nextui-org/react"
+import { Container, Text, Link, Grid } from "@nextui-org/react"
 import Head from 'next/head'
 
 export default function DefaultLayout({ children }: { children: React.ReactNode }) {
@@ -30,6 +30,13 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
     </style>
     <main className="main">
       {children}
+      <Grid.Container css={{ marginTop: '$20' }} justify='center' alignContent="center">
+        <Grid>
+
+          Built with <Text span color="red">❤️</Text> by <Link href="https://twitter.com/domnguyen5653" target="_blank" rel="noreferrer">@domnguyen</Link> and everyone on the internet 🚀
+
+        </Grid>
+      </Grid.Container>
     </main>
   </Container >)
 }
